@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Test;
 
@@ -74,6 +75,7 @@ import cmcc.iot.onenet.javasdk.response.mqtt.TopicDeviceList;
 import cmcc.iot.onenet.javasdk.response.triggers.NewTriggersResponse;
 import cmcc.iot.onenet.javasdk.response.triggers.TriggersList;
 import cmcc.iot.onenet.javasdk.response.triggers.TriggersResponse;
+
 
 public class ApiTest {
 	@Test
@@ -711,7 +713,7 @@ public class ApiTest {
 
 	// 发送json类型类型命令
 	@Test
-	public void testSendJsonCmdsApi() throws IOException {
+	public void testSendJsonCmdsApi() throws IOException, JSONException {
 		String devId = "9288";
 		String key = "JKRfIzneAwXLdI6V0Yy83XOavb8=";
 		JSONObject json = new JSONObject();
@@ -780,7 +782,7 @@ public class ApiTest {
 	}
 	
 	@Test
-	public void testSendMqttsApi(){
+	public void testSendMqttsApi() throws JSONException {
 		String topic="testtopic";
 		String key="JKRfIzneAwXLdI6V0Yy83XOavb8=";
 		JSONObject json = new JSONObject();
